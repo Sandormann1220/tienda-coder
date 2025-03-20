@@ -1,0 +1,25 @@
+.cart{
+    display: flex;
+    width: 20%;
+    height: 100%;
+    padding: 1%;
+
+  }
+  .cart_image{
+    width: 2.9rem;
+    padding: 1px;
+    fill: #47525d;
+    cursor: pointer;
+  }
+  .cart_item_counter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+    height: 40%;
+    background-color: #ED4C91;
+    padding: 12px;
+    font-size: 1.4rem;
+    color: white;
+    border-radius: 50%;
+  }

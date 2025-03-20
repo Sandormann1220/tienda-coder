@@ -1,0 +1,48 @@
+.countContainer{
+  
+    width: 63%;
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+.btn{
+
+    width: 40px;
+    height: 40px;
+    padding: 10px;
+    border-radius: 50%;
+    border: 1.5px solid black;
+    /* background-color: white; */
+    text-align: center;
+    color: black;
+    font-size: 1rem;
+    cursor: pointer;
+}
+.btn:hover{
+    background-color: rgb(204, 0, 255);
+    color: aliceblue;
+    transition: .8s;
+    border: 1.5px solid white;
+    font-weight: bolder;
+}
+
+.addToCart{
+    padding: 12px 30px;
+    color: black;
+    border: 1.5px solid black;
+    cursor: pointer;
+    border-radius: 10px;
+}
+.addToCart:hover{
+    background-color: rgb(255, 0, 170);
+    color: aliceblue;
+    transition: .8s;
+}
+
+.quantity{
+    font-size: 1.5rem;
+}

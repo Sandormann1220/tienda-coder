@@ -1,0 +1,49 @@
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-weight: 400;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  width: 100%;
+  min-height: 100vh;
+
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
+  letter-spacing: 1px;
+
+  background-image: url('./assets/librero.png');
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: 400;
+  font-family: 'Quicksand';
+}
+
+
+
+/*@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+*/

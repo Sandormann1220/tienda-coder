@@ -1,0 +1,17 @@
+
+.gallery_container{
+	width: 80%;
+	min-height: 60vh;
+	text-align: center;
+	margin: auto;
+}
+.products_container{
+	margin: 20px auto;
+	width: 90%;
+	height: 100%;
+
+	display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-rows: 420px;
+    gap: 15px;
+}

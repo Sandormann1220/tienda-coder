@@ -1,0 +1,19 @@
+footer{
+	position: fixed;
+	bottom:0;
+	width: 100%;
+	height: 30px;
+	background-color: #47525d;
+	color:white;
+	text-align: center;
+	line-height: 30px;
+	font-weight: 100;
+	font-family: 'Raleway', sans-serif;
+	font-size: .8rem;
+}
+
+
+/*section{
+	width: 100%;
+	height: 20vh;
+}*/

@@ -1,9 +1,9 @@
 import Item from "./Item/Item"
 
-export default function ItemList({products}){
+export default function ItemList({items}){
     return(
         <>
-                {products?.map(product => <Item product={ product } key={product.id}/>) }
+                {items.map(item => <Item product={ item } key={item.id}/>) }
         </>
     )
 }

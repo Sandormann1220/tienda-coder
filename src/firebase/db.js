@@ -17,28 +17,21 @@ export const getProducts = async() => {
      const productos = []
 
      querySnapshot.forEach((doc) => {
-          console.log(doc.data())
           productos.push({...doc.data(), id: doc.id})
-          console.log(`id:${doc.id} => ${doc.data()}`);
-
-          return productos
     });
+     return productos
 
 }
-export const getProductsByCategory= async(categoria) => {
+export const getProductsByCategory = async(categoria) => {
      const q = query(collection(db, "products"), where("categoria", "==", categoria));
 
      const querySnapshot = await getDocs(q);
      const productos = []
 
      querySnapshot.forEach((doc) => {
-          console.log(doc.data())
-          productos.push({id: doc.id, ...doc.data()})
-          console.log(`${doc.id} => ${doc.data()}`);
-
-          return productos
+          productos.push({...doc.data(), id: doc.id})
     });
-
+     return productos
 
 }
 

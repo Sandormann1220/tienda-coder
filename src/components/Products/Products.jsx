@@ -6,18 +6,23 @@ import { getProducts, getProductsByCategory } from "../../firebase/db";
 
 
 export default function Products(){
-	const [products, setProducts] = useState([]);
+	const [items, setItems] = useState([]);
     const { id } = useParams()
 
 	useEffect(() => {
-			getProducts().then(res => setProducts(res))	
+		if(id){
+			getProductsByCategory(id).then(res => setItems(res))
+		}else{
+			getProducts().then(res => setItems(res))
+		}
+				
 	 },[id])
 	
 	return(
 			<section className={styles.gallery_container}>
 				<h1>Catálogo de productos</h1>
 				<div className={styles.products_container}>	
-					{<ItemList products={products} />}
+					{<ItemList items={items} />}
 				</div>
 			</section>
 		)

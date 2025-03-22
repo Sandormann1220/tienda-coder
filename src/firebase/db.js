@@ -39,8 +39,8 @@ export const getProduct = async(id)=>{
           const docRef = doc(db, "products", id);
           const docSnap = await getDoc(docRef);
 
-          if (docSnap.exists()) {
-               console.log("Document data: ", docSnap.data());
+          if(docSnap.exists()) {
+               // console.log("Document data: ", docSnap.data());
                return { ...docSnap.data(), id: docSnap.id }
           } else {
           // docSnap.data() will be undefined in this case

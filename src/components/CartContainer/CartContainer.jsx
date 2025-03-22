@@ -17,9 +17,9 @@ const { cart } = useCart()
                 {cart.map(item => (
                     <div key={item.id} className={styles.card}>
                             <span   className={styles.span_cant}>Cant: {item.quantity}</span>
-                            <p className={styles.card_title}>{item.title}</p>
+                            <p className={styles.card_title}>{item.titulo}</p>
                             <figure className={styles.card_image}>
-                                <img src={item.image} alt={item.title} className={styles.card_img} />
+                                <img src={item.imagen} alt={item.titulo} className={styles.card_img} />
                             </figure>
                             <figure className={styles.icon_container}>
                                 <svg xmlns="http://www.w3.org/2000/svg" className={styles.btn_delete} viewBox="0 0 24 24">

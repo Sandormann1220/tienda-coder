@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router";
 import ItemList from "../ItemList.jsx";
-import styles from './Products.module.css'
+import styles from './ItemListContainer.module.css'
 import { getProducts, getProductsByCategory } from "../../firebase/db";
 
 

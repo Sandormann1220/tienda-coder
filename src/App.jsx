@@ -1,5 +1,5 @@
 import Header from './components/Header/Header'
-import Products from './components/Products/Products'
+import ItemListContainer from './components/ItemListContainer/ItemListContainer'
 import Footer from './components/Footer/footer'
 import Error from './components/Error.jsx'
 import ItemDetailsContainer from './components/ItemDetailsContainer/ItemDetailsContainer.jsx'
@@ -15,8 +15,8 @@ function App() {
         <BrowserRouter>
           <Header />
           <Routes>
-            <Route index path='/' element={<Products />} />
-            <Route path='/categoria/:id' element={<Products />}/>
+            <Route index path='/' element={<ItemListContainer />} />
+            <Route path='/categoria/:id' element={<ItemListContainer />}/>
             <Route path='/item/:id' element={<ItemDetailsContainer />}/> 
             <Route path="/cart" element={<CartContainer />}/>
             <Route path="/checkOutForm" element={<CheckOutForm />}/>

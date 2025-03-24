@@ -2,7 +2,7 @@ import { useContext } from 'react'
 import { cartContext } from '../../context/cartContext'
 import { serverTimestamp } from 'firebase/firestore'
 import { createOrder } from '../../firebase/db.js'
-
+import styles from './CheckOutForm.module.css'
 
 export default function CheckOutForm(){
 	const { cart, getTotal } = useContext(cartContext)
@@ -25,19 +25,21 @@ export default function CheckOutForm(){
 		createOrder(order)
 	}
 	return(
+			<section className={styles.container}>
+				<form onSubmit={handleSubmit} className={styles.form}>
+							<label for="email" className={styles.label}>Mail:</label>
+							<input type="email" id="email" className={styles.input} placeholder="sandormann@correo.com" required/>
 
-			<form onSubmit={handleSubmit}>
-				<label for="email">Mail:</label>
-				<input type="email" id="email" placeholder="sandormann@correo.com" required/>
+							<label for="name" className={styles.label}>Name:</label>
+							<input type="text" id="name" className={styles.input} placeholder="Sandormann" required/>
 
-				<label for="name">Name:</label>
-				<input type="text" id="name" placeholder="Sandormann" required/>
+							<label for="phone" className={styles.label}>Phone:</label>
+							<input type="phone" id="phone" className={styles.input} placeholder="+55226644" required/>
 
-				<label for="phone">Mail:</label>
-				<input type="phone" id="phone" placeholder="+55226644" required/>
-
-				<button type="submit">Finalizar comprar</button>
-			</form>
+							<button type="submit" className={styles.submit_btn}>Finalizar comprar</button>
+				</form>
+			</section>
+			
 
 
 

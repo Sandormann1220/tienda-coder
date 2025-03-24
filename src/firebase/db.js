@@ -4,7 +4,8 @@ import { getFirestore,
           query, 
           where,
           doc, 
-          getDoc } 
+          getDoc,
+          addDoc } 
           from "firebase/firestore";
 import { app } from "./config";
 
@@ -47,4 +48,13 @@ export const getProduct = async(id)=>{
           console.log("No such document!");
           }
 
+}
+//Agregar datos al DB
+export const createOrder = async(order)=>{
+          try {
+            const docRef = await addDoc(collection(db, "orders"), order);
+            console.log("Document written with ID: ", docRef.id);
+          } catch (e) {
+            console.error("Error adding document: ", e);
+          }
 }

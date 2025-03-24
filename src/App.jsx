@@ -5,6 +5,7 @@ import Error from './components/Error.jsx'
 import ItemDetailsContainer from './components/ItemDetailsContainer/ItemDetailsContainer.jsx'
 import { BrowserRouter, Routes, Route } from 'react-router'
 import CartContainer from './components/CartContainer/CartContainer'
+import CheckOutForm from './components/CheckOutForm/CheckOutForm.jsx'
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
             <Route path='/categoria/:id' element={<Products />}/>
             <Route path='/item/:id' element={<ItemDetailsContainer />}/> 
             <Route path="/cart" element={<CartContainer />}/>
+            <Route path="/checkOutForm" element={<CheckOutForm />}/>
             <Route path='*' element={<Error />} />
           </Routes>
           <Footer />

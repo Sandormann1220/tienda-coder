@@ -1,7 +1,13 @@
 import { useCart } from "../../context/CartContext"
 import styles from './CartContainer.module.css'
+import { useNavigate } from 'react-router'
 
 export default function  CartContainer(){
+const Navigate = useNavigate()
+const handleClick = ()=>{
+    Navigate('/checkOutForm')
+}
+
 const { cart } = useCart()
 
     if(cart.length === 0){
@@ -13,6 +19,7 @@ const { cart } = useCart()
     return(
         <section className={styles.container}>
             <h1>Tus productos en el carrito</h1>
+                <p className={styles.cta} onClick={handleClick}>Proceder al pago</p>
             <div className={styles.card_container}>
                 {cart.map(item => (
                     <div key={item.id} className={styles.card}>

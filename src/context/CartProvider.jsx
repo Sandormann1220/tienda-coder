@@ -16,9 +16,16 @@ export default function CartProvider ({ children }){
         return result
     }
 
+     const getTotal = () => {
+        const prices = cart.map(item => item.precio*item.quantity)
+        const total = prices.reduce((accumulator, currentValue) => accumulator + currentValue,0);
+    
+        return total
+    }
+
     return(
         //Se pueden pasar diferentes datos o funciones como un arreglo
-        <cartContext.Provider value={ { addToCart, getQuantity, cart } }>
+        <cartContext.Provider value={ { addToCart, getQuantity, getTotal, cart } }>
             {children}
         </cartContext.Provider>
     )

@@ -6,12 +6,26 @@ h1{
     letter-spacing: 1px;
 }
 .container{
-
     width: 70%;
     min-height: 80vh;
     margin: 30px auto;
 }
 
+.cta{
+    width: 30%;
+    margin:5px auto;
+    padding:15px 16px;
+    color: #EA526F;
+    text-align: center;
+    cursor: pointer;
+    transition: .3s;
+}
+.cta:hover{
+    border-radius: 20px;
+    border: 1px solid crimson;
+    background-color: white;
+    color: crimson;
+}
 .card_container{
 
     width: 90%;
@@ -31,7 +45,8 @@ h1{
     width: 95%;
     min-height: 90px;
     margin: auto;
-    box-shadow: 0px 0px 5px -1px rgba(84,84,89,1);
+    background-color: #F7F7FF;
+/*    box-shadow: 0px 0px 5px -1px rgba(84,84,89,1);*/
 
     display: grid;
     grid-template-columns: repeat(5, 1fr);

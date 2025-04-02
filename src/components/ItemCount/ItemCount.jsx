@@ -3,27 +3,29 @@ import { cartContext } from "../../context/CartContext"
 import styles from './ItemCount.module.css'
 
 export default function ItemCount( {product}){
-     const [count, setCount] = useState(0)
+     const [ count, setCount ] = useState(0)
+     const [ disabled, setDisabled ] = useState(false)
      const { addToCart } = useContext(cartContext)
 
-     const [disabled, setDisabled] = useState(false)
+     
     
     const handleAdd = ()=>{
         setCount(count + 1);
         setDisabled(false)
+        disabledSpan(false)
     }
 
     const handleSubs = ()=>{
         setCount(count  - 1);
-        if(count <= 0 || count < 0){
+        if(count <= 0){
             setDisabled(true)
             setCount(0)
         }
     }
     const handleAddToCart = () => {
-        console.log(product)
-        addToCart({...product, quantity: count})
-        console.log(product)
+        if(count !== 0){
+            addToCart({...product, quantity: count})
+        }
     }
     
     return(

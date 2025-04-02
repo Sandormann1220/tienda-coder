@@ -8,11 +8,10 @@ export default function ItemCount( {product}){
      const { addToCart } = useContext(cartContext)
 
      
-    
+
     const handleAdd = ()=>{
         setCount(count + 1);
         setDisabled(false)
-        disabledSpan(false)
     }
 
     const handleSubs = ()=>{
@@ -24,7 +23,7 @@ export default function ItemCount( {product}){
     }
     const handleAddToCart = () => {
         if(count !== 0){
-            addToCart({...product, quantity: count})
+            addToCart({... product, quantity: count})
         }
     }
     

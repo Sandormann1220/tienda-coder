@@ -8,7 +8,7 @@ import withReactContent from 'sweetalert2-react-content'
 import { useNavigate } from 'react-router'
 
 export default function CheckOutForm(){
-	const { cart, getTotal } = useContext(cartContext)
+	const { cart, getTotal, emptyCart } = useContext(cartContext)
 	const MySwal = withReactContent(Swal) 
 	const Navigate = useNavigate()
 
@@ -35,11 +35,13 @@ export default function CheckOutForm(){
 			// didOpen: () => {
 			//   // `MySwal` is a subclass of `Swal` with all the same instance & static methods
 			//   MySwal.showLoading()
-			// },
+			// }
 		  }).then(() => {
 			Navigate('/')
 			// return MySwal.fire(<p>Shorthand works too</p>)
 		  })
+
+		  emptyCart()
 	}
 	return(
 			<section className={styles.container}>

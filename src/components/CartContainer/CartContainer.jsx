@@ -1,20 +1,33 @@
-import { useCart } from "../../context/CartContext"
+
+import { useCart } from "../../context/cartContext"
 import styles from './CartContainer.module.css'
-import { useNavigate } from 'react-router'
+import { useNavigate, useParams } from 'react-router'
+import { getProducts } from "../../firebase/db"
+import { useEffect } from "react"
+import { useState } from "react"
 
 export default function  CartContainer(){
 const Navigate = useNavigate()
+const { cart } = useCart()
+const { id }  = useParams();
+const [ Products, setProducts ] = useState([])
+
+useEffect(() => {
+     getProducts().then(res => setProducts(res))
+},[id])
+
 const handleClick = ()=>{
     Navigate('/checkOutForm')
 }
 
-const { cart } = useCart()
 
-    if(cart.length === 0){
-        return(
-            <h1>Tu carrito está vacio</h1>
-        )
-    }
+
+const handleDeleteItem = () => {
+
+        console.log(`Borrar elemento ${id}`)
+        console.log(Products.map(item => item.id))
+
+}
 
     return(
         <section className={styles.container}>
@@ -28,7 +41,7 @@ const { cart } = useCart()
                             <figure className={styles.card_image}>
                                 <img src={item.imagen} alt={item.titulo} className={styles.card_img} />
                             </figure>
-                            <figure className={styles.icon_container}>
+                            <figure className={styles.icon_container} onClick={handleDeleteItem}>
                                 <svg xmlns="http://www.w3.org/2000/svg" className={styles.btn_delete} viewBox="0 0 24 24">
                                     <path className={styles.svg} d="M5 20a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8h2V6h-4V4a2 2 0 0 0-2-2H9a2 2 0 0 0-2 2v2H3v2h2zM9 4h6v2H9zM8 8h9v12H7V8z"></path><path d="M9 10h2v8H9zm4 0h2v8h-2z"></path>
                                 </svg>

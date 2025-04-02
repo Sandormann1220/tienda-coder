@@ -1,5 +1,6 @@
+/* eslint-disable no-unused-vars */
 import { useState } from "react";
-import { cartContext } from "./CartContext";
+import { cartContext } from './cartContext';
 
 export default function CartProvider ({ children }){
 
@@ -23,9 +24,12 @@ export default function CartProvider ({ children }){
         return total
     }
 
+    const emptyCart = () => {
+          setCart([])
+    }
+
     return(
-        //Se pueden pasar diferentes datos o funciones como un arreglo
-        <cartContext.Provider value={ { addToCart, getQuantity, getTotal, cart } }>
+        <cartContext.Provider value={ { addToCart, getQuantity, getTotal, cart, emptyCart } }>
             {children}
         </cartContext.Provider>
     )

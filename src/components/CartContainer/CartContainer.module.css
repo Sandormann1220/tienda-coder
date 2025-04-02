@@ -13,12 +13,13 @@ h1{
 
 .cta{
     width: 30%;
-    margin:5px auto;
+    margin:20px auto;
     padding:15px 16px;
     color: #EA526F;
     text-align: center;
     cursor: pointer;
     transition: .3s;
+    background-color: #f5b5c081;
 }
 .cta:hover{
     border-radius: 20px;

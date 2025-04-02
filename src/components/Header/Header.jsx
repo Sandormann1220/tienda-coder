@@ -1,4 +1,4 @@
-import styles from './header.module.css'
+import styles from './Header.module.css'
 import logo from '../../assets/logo.png'
 import Navbar from '../Navbar/Navbar.jsx'
 import CartWidget from '../CartWidget/CartWidget.jsx'

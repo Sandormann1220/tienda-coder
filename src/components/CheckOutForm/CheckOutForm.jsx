@@ -1,5 +1,6 @@
 import { useContext } from 'react'
-import { cartContext } from '../../context/cartContext'
+// import { cartContext } from '../../context/cartContext'
+import { cartContext } from '../../context/CartContext.js'
 import { serverTimestamp } from 'firebase/firestore'
 import { createOrder } from '../../firebase/db.js'
 import styles from './CheckOutForm.module.css'
@@ -8,7 +9,7 @@ import withReactContent from 'sweetalert2-react-content'
 import { useNavigate } from 'react-router'
 
 export default function CheckOutForm(){
-	const { cart, getTotal } = useContext(cartContext)
+	const { cart, getTotal, emptyCart } = useContext(cartContext)
 	const MySwal = withReactContent(Swal) 
 	const Navigate = useNavigate()
 
@@ -40,6 +41,8 @@ export default function CheckOutForm(){
 			Navigate('/')
 			// return MySwal.fire(<p>Shorthand works too</p>)
 		  })
+
+		  emptyCart()
 	}
 	return(
 			<section className={styles.container}>

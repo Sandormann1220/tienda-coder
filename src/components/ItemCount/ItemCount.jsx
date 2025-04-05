@@ -12,7 +12,6 @@ export default function ItemCount( {product}){
     const handleAdd = ()=>{
         setCount(count + 1);
         setDisabled(false)
-        disabledSpan(false)
     }
 
     const handleSubs = ()=>{
